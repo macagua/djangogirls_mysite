@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'djangogirls_mysite.urls'
+ROOT_URLCONF = 'djangogirls.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangogirls_mysite.wsgi.application'
+WSGI_APPLICATION = 'djangogirls.wsgi.application'
 
 
 # Database
