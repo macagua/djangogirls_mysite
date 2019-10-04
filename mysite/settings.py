@@ -120,3 +120,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Settings Login URL
+# https://docs.djangoproject.com/en/2.2/ref/settings/#login-url
+# LOGIN_URL='/admin/login/'
+
+# Settings Login Redirect URL
+# https://docs.djangoproject.com/en/2.2/ref/settings/#logout-redirect-url
+LOGIN_REDIRECT_URL = '/'
