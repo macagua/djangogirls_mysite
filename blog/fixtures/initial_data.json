@@ -1,0 +1,54 @@
+[
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "title": "Hello Django",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ultrices, mollis dui in, laoreet libero. Quisque leo dolor, aliquam sit amet metus vel, consectetur blandit ligula. Nunc ultricies purus vitae ipsum auctor, id condimentum risus ultricies. \r\n\r\nPellentesque vel vulputate orci, ut accumsan felis. Nam egestas ut neque et sodales. Ut sit amet lacus erat. Cras dictum mi ullamcorper tortor sagittis, eu tincidunt massa consequat. Proin massa ante, porta id tincidunt vel, imperdiet ac mi. Cras tempus sollicitudin tortor, at consequat elit malesuada at. Nunc et neque sed enim interdum sollicitudin ut vitae justo.",
+    "created_date": "2019-10-03T21:09:07Z",
+    "published_date": "2019-10-03T22:13:18.537Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 2,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "title": "Python is Cool",
+    "text": "Phasellus blandit lectus non risus porttitor, ac laoreet metus tincidunt. Nulla facilisi. Pellentesque eget sapien imperdiet, vestibulum ligula sit amet, lobortis arcu. \r\n\r\nCras egestas, sem ac vestibulum tincidunt, erat velit tempor risus, eget fermentum lectus dui sit amet enim. Pellentesque a justo lectus. Morbi sed metus a erat auctor sodales. Proin ut urna ac massa ullamcorper cursus. Nullam pretium urna sed cursus mattis. Sed euismod sollicitudin tempor. Integer aliquet vulputate eros ac placerat. Mauris ut efficitur purus. \r\n\r\nPhasellus sit amet ex nec felis pellentesque luctus sed ac risus. Maecenas imperdiet rutrum gravida. Sed dui ante, mattis sit amet finibus vel, accumsan in enim. Quisque molestie quam in lectus vulputate faucibus.",
+    "created_date": "2019-10-03T21:10:41Z",
+    "published_date": "2019-10-03T22:13:36Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 3,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "title": "I love Python",
+    "text": "In a neque accumsan, blandit justo vel, commodo urna. Aenean vitae ante augue. Morbi pretium vehicula lectus, placerat dignissim erat vehicula et. Integer vel magna eu mi pellentesque rhoncus eu id nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. \r\n\r\nInteger commodo sem orci, non mollis dolor volutpat rutrum. Nulla fermentum leo quis lacus scelerisque, ut fringilla lacus mollis. Proin fermentum convallis tincidunt.\r\n\r\nPhasellus sapien magna, blandit in ullamcorper vel, viverra nec erat. Duis nec consequat lorem, semper tincidunt nisl.",
+    "created_date": "2019-10-03T21:11:23Z",
+    "published_date": "2019-10-03T22:13:29Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 4,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "title": "Django Girls is Great!",
+    "text": "Nullam dapibus mollis porta. Quisque quis enim tortor. In at ipsum at mi porta cursus a sit amet diam. Suspendisse ut ipsum bibendum, elementum mauris id, ultricies dolor. \r\n\r\nMauris volutpat risus odio. Donec non mi id orci sollicitudin auctor non auctor quam. Etiam id dolor elit. Etiam nec eleifend eros. Nunc a maximus urna. In sagittis at lacus tristique facilisis. \r\n\r\nSed mattis porttitor velit, molestie efficitur nunc pellentesque vel. Sed in ligula lorem.",
+    "created_date": "2019-10-03T22:14:28.767Z",
+    "published_date": "2019-10-03T22:14:28.771Z"
+  }
+}
+]
