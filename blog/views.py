@@ -15,11 +15,18 @@ def post_detail(request, pk):
 
 
 def post_new(request):
+
+    if hasattr(request, 'user'):
+        user = request.user
+    else:
+        from django.contrib.auth.models import AnonymousUser
+        user = AnonymousUser()
+
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
+            post.author = user
             post.published_date = timezone.now()
             post.save()
             return redirect('blog:post_detail', pk=post.pk)
