@@ -23,6 +23,7 @@ DATABASES = {
 # Import commons settings file
 try:
     from .base import *
-    from .pythonanywhere.settings import *
+    from .heroku.settings import *
+    # from .pythonanywhere.settings import *
 except ImportError:
     pass
