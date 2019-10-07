@@ -25,7 +25,10 @@ SECRET_KEY = '66o(#@5uli5ws!13u4yip%iv+snzjt*66q*9goe5!!n(t0w)mn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+# Hostname default
+HOSTNAME = '127.0.0.1'
+
+ALLOWED_HOSTS = [HOSTNAME, '0.0.0.0', 'localhost']
 
 
 # Application definition
@@ -76,12 +79,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangogirls',
-        'USER': 'pygirls',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
