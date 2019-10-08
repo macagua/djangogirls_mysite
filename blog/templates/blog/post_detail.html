@@ -6,12 +6,46 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
         {% endif %}
+
         {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'blog:post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        <h3><a href="/" title="Back to home"><span class="glyphicon glyphicon-chevron-left"></span></a></h3>
+        <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}" title="Add comment">Add comment</a>
     </div>
+    <hr>
+    {% if post.comments.count %}
+        <div class="alert alert-info" role="alert">
+            {% if post.comments.count > 1 %}
+            There are {{ post.comments.count }} comment{{ post.comments|length|pluralize:"s" }}:
+            {% else %}
+            There is {{ post.comments.count }} comment:
+            {% endif %}
+        </div>
+        {% for comment in post.comments.all %}
+            {% if user.is_authenticated or comment.approved_comment %}
+            <div class="comment">
+                <div class="date">
+                    {{ comment.created_date }}
+                    {% if not comment.approved_comment %}
+                        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                    {% endif %}
+                </div>
+                <strong>{{ comment.author }}</strong>
+                <p>{{ comment.text|linebreaks }}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="post">
+            <div class="alert alert-warning" role="alert">No comments here yet :(</div>
+            <h3><a href="/" title="Back to home"><span class="glyphicon glyphicon-chevron-left"></span></a></h3>
+        </div>
+    {% endif %}
 {% endblock %}

@@ -5,20 +5,37 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="{% static 'img/favicon.ico' %}" rel="shortcut icon">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div class="page-header">
             {% if user.is_authenticated %}
-                <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'logout' %}" class="top-menu" title="Log out"><span class="glyphicon glyphicon-log-out"></a></p>
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello {{ user.username }},</p>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-8">
+                    <a href="http://djangogirls.org/" target="_blank" class="img-responsive" title="Django Girls">
+                        <img src="/static/img/djangogirls-global-logo.png" alt="Django Girls" />
+                    </a>
+                    <p class="text-muted">We are a non-profit organization and a community that empowers and helps women to organize free, one-day programming workshops by providing tools, resources and support.</p>
+                    <p class="text-muted">This web blog is produced by the tutorial using into one-day programming workshop created by women to empower other women to program in Python with the Django framework.</p>
                 </div>
             </div>
         </div>

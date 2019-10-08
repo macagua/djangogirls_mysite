@@ -25,7 +25,10 @@ SECRET_KEY = '66o(#@5uli5ws!13u4yip%iv+snzjt*66q*9goe5!!n(t0w)mn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+# Hostname default
+HOSTNAME = '127.0.0.1'
+
+ALLOWED_HOSTS = [HOSTNAME, '0.0.0.0', 'localhost']
 
 
 # Application definition
@@ -120,3 +123,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Settings Login URL
+# https://docs.djangoproject.com/en/2.2/ref/settings/#login-url
+# LOGIN_URL='/admin/login/'
+
+# Settings Login Redirect URL
+# https://docs.djangoproject.com/en/2.2/ref/settings/#logout-redirect-url
+LOGIN_REDIRECT_URL = '/'

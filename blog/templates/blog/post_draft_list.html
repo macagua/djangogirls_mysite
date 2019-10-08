@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if posts.count %}
+        <div class="alert alert-info" role="alert">
+            There {{ posts|length|pluralize:"is,are" }} {{ posts|length }} draft{{ posts|length|pluralize:"s" }} post{{ posts|length|pluralize:"s" }}:
+        </div>
+        {% for post in posts %}
+            <div class="post">
+                <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                <p>{{ post.text|truncatechars:200 }}</p>
+                <h3><a href="/" title="Back to home"><span class="glyphicon glyphicon-chevron-left"></span></a></h3>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="post">
+            <div class="alert alert-warning" role="alert">No drafts posts</div>
+            <h3><a href="/" title="Back to home"><span class="glyphicon glyphicon-chevron-left"></span></a></h3>
+        </div>
+    {% endif %}
+{% endblock %}
